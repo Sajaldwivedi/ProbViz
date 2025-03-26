@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { getProblemData } from '../mockData';
 
 function ProblemForm({ setProblemData, setLoading, setError }) {
@@ -30,7 +31,13 @@ function ProblemForm({ setProblemData, setLoading, setError }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="problem-form">
+    <motion.form
+      onSubmit={handleSubmit}
+      className="problem-form"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <input
         type="text"
         value={problemId}
@@ -38,10 +45,15 @@ function ProblemForm({ setProblemData, setLoading, setError }) {
         placeholder="Enter problem ID (e.g., 'two-sum' or '1020A')"
         className="problem-input"
       />
-      <button type="submit" className="submit-btn">
+      <motion.button
+        type="submit"
+        className="submit-btn"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
         Visualize
-      </button>
-    </form>
+      </motion.button>
+    </motion.form>
   );
 }
 

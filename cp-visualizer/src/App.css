@@ -8,6 +8,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7fa;
   color: #333;
+  line-height: 1.6;
 }
 
 .App {
@@ -18,46 +19,49 @@ body {
 
 .App-header {
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 20px;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .App-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .App-header p {
   font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 .problem-form {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
 .problem-input {
-  padding: 12px;
-  width: 300px;
+  padding: 14px;
+  width: 320px;
   font-size: 1rem;
   border: 2px solid #ddd;
   border-radius: 8px;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .problem-input:focus {
   border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
 }
 
 .submit-btn {
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 1rem;
   background-color: #667eea;
   color: white;
@@ -74,6 +78,7 @@ body {
 .loading, .error {
   text-align: center;
   margin: 20px 0;
+  font-size: 1.1rem;
 }
 
 .loading {
@@ -85,27 +90,91 @@ body {
 }
 
 .problem-stats {
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.problem-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.problem-stats h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.problem-card h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.problem-stats p {
-  font-size: 1.1rem;
-  color: #666;
+.difficulty {
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
+.difficulty span {
+  font-weight: bold;
+  color: #667eea;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tag {
+  background-color: #e9ecef;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
 .chart-container {
-  max-width: 600px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.test-cases {
+  text-align: left;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.test-cases h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.test-case {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.test-case p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.test-case strong {
+  color: #333;
 }
 
 footer {
@@ -133,5 +202,13 @@ footer {
 
   .App-header p {
     font-size: 1rem;
+  }
+
+  .problem-card {
+    padding: 20px;
+  }
+
+  .chart-container {
+    max-width: 100%;
   }
 }
