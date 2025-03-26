@@ -57,7 +57,7 @@ function App() {
         )}
       </main>
       <footer>
-        <p>Built by Sajal Dwivedi | March 26, 2025</p>
+        <p>Built by Sajal Dwivedi | 2025</p>
       </footer>
     </div>
   );
