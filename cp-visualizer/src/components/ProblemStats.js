@@ -57,7 +57,7 @@ function ProblemStats({ problemData }) {
         <div className="chart-container">
           <Bar data={chartData} options={options} />
         </div>
-        < obstetricianiv className="test-cases">
+        <div className="test-cases">
           <h3>Sample Test Cases</h3>
           {problemData.testCases.map((test, index) => (
             <div key={index} className="test-case">
