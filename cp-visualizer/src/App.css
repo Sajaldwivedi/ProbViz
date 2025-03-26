@@ -6,24 +6,15 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
   line-height: 1.6;
 }
 
 .App {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.App.light {
-  background-color: #f4f7fa;
-  color: #333;
-}
-
-.App.dark {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
 }
 
 .App-header {
@@ -34,7 +25,6 @@ body {
   border-radius: 12px;
   margin-bottom: 40px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .App-header h1 {
@@ -46,61 +36,6 @@ body {
 .App-header p {
   font-size: 1.2rem;
   opacity: 0.9;
-}
-
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
-  background-color: #ffffff33;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.theme-toggle:hover {
-  background-color: #ffffff66;
-}
-
-.content-wrapper {
-  display: flex;
-  gap: 20px;
-}
-
-.history-sidebar {
-  width: 250px;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  height: fit-content;
-}
-
-.App.dark .history-sidebar {
-  background: #2a2a2a;
-}
-
-.history-sidebar h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.history-item {
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
-
-.history-item:hover {
-  background-color: #e9ecef;
-}
-
-.App.dark .history-item:hover {
-  background-color: #3a3a3a;
 }
 
 .problem-form {
@@ -118,12 +53,6 @@ body {
   border-radius: 8px;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.App.dark .problem-input {
-  background: #2a2a2a;
-  color: #e0e0e0;
-  border-color: #444;
 }
 
 .problem-input:focus {
@@ -146,35 +75,17 @@ body {
   background-color: #5a6ed9;
 }
 
-.loading {
+.loading, .error {
   text-align: center;
   margin: 20px 0;
   font-size: 1.1rem;
+}
+
+.loading {
   color: #667eea;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #667eea;
-  border-top: 4px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .error {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 1.1rem;
   color: #ff6384;
 }
 
@@ -190,17 +101,10 @@ body {
   text-align: center;
 }
 
-.App.dark .problem-card {
-  background: #2a2a2a;
-}
-
 .problem-card h2 {
   font-size: 2rem;
   margin-bottom: 15px;
-}
-
-.App.dark .problem-card h2 {
-  color: #e0e0e0;
+  color: #333;
 }
 
 .difficulty {
@@ -222,10 +126,6 @@ body {
   margin-right: auto;
 }
 
-.App.dark .description {
-  color: #b0b0b0;
-}
-
 .tags {
   display: flex;
   justify-content: center;
@@ -241,21 +141,12 @@ body {
   color: #495057;
 }
 
-.App.dark .tag {
-  background-color: #3a3a3a;
-  color: #d0d0d0;
-}
-
 .chart-container {
   max-width: 700px;
   margin: 0 auto 40px;
   padding: 20px;
   background: #f9f9f9;
   border-radius: 8px;
-}
-
-.App.dark .chart-container {
-  background: #333;
 }
 
 .test-cases {
@@ -267,10 +158,7 @@ body {
 .test-cases h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-}
-
-.App.dark .test-cases h3 {
-  color: #e0e0e0;
+  color: #333;
 }
 
 .test-case {
@@ -280,48 +168,24 @@ body {
   margin-bottom: 15px;
 }
 
-.App.dark .test-case {
-  background: #333;
-}
-
 .test-case p {
   font-size: 1rem;
   color: #555;
-}
-
-.App.dark .test-case p {
-  color: #b0b0b0;
 }
 
 .test-case strong {
   color: #333;
 }
 
-.App.dark .test-case strong {
-  color: #e0e0e0;
-}
-
 footer {
   text-align: center;
   margin-top: 40px;
-  font-size: 0.9rem;
   color: #666;
-}
-
-.App.dark footer {
-  color: #b0b0b0;
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
-
-  .history-sidebar {
-    width: 100%;
-  }
-
   .problem-form {
     flex-direction: column;
     align-items: center;
@@ -338,6 +202,10 @@ footer {
 
   .App-header p {
     font-size: 1rem;
+  }
+
+  .problem-card {
+    padding: 20px;
   }
 
   .chart-container {

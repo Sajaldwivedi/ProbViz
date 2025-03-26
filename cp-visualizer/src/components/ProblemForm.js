@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { getProblemData } from '../api';
+import { getProblemData } from '../mockData';
 
-function ProblemForm({ setProblemData, setLoading, setError, updateHistory }) {
+function ProblemForm({ setProblemData, setLoading, setError }) {
   const [problemId, setProblemId] = useState('');
 
   const handleSubmit = async (e) => {
@@ -22,7 +22,6 @@ function ProblemForm({ setProblemData, setLoading, setError, updateHistory }) {
         setError(data.error);
       } else {
         setProblemData(data);
-        updateHistory(data);
       }
     } catch (err) {
       setError('Something went wrong');
@@ -43,7 +42,7 @@ function ProblemForm({ setProblemData, setLoading, setError, updateHistory }) {
         type="text"
         value={problemId}
         onChange={(e) => setProblemId(e.target.value)}
-        placeholder="Enter Codeforces problem ID (e.g., '1020A')"
+        placeholder="Enter problem ID (e.g., 'two-sum' or '1020A')"
         className="problem-input"
       />
       <motion.button
